@@ -19,7 +19,7 @@ pagilaPassword=$(echo $pagilaJson | jq -r '.password')
 
 echo "Successfully created Spawn data container '$pagilaContainerName'"
 
-docker run --net=host --rm -v $PWD/sql:/flyway/sql flyway/flyway migrate -url="jdbc:postgresql://$pagilaHost:$pagilaPort/pagila" -user=$pagilaUser -password=$pagilaPassword
+docker run --net=host --rm -v $PWD/sql:/flyway/sql flyway/flyway migrate -url="jdbc:postgresql://$pagilaHost:$pagilaPort/pagila" -user=$pagilaUser -password=$pagilaPassword --baselineOnMigrate=true
 
 echo "Successfully migrated 'Pagila' database"
 
