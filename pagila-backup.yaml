@@ -5,7 +5,8 @@ sourceType: backup
 backup:
   folder: ./backups/
   file: pagila.sql
-  format: plain
+  format: custom
 tags:
   - prod
   - latest
+initialDatabaseName: pagila
